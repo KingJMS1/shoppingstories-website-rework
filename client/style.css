@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+.slideBar input{display: none;}
+  
+.slideBar{
+    font-family: arial, sans-serif;
+    max-width: 900px;
+    margin: 50px auto;
+    overflow-wrap: break-word;
+    height: 80px;
+    display: block;
+    background: #ccc;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.slideBar label{
+    width: 20%;
+    height: 80px;
+    float: left;
+    color: #000;
+    opacity: 0.2;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideBar label:hover{
+    cursor: pointer;
+    color: #666;
+}
+
+.slideBar label span{
+    display: block;
+    padding: 10px;
+}
+
+.slideBar .sliderTab{
+    width: 20%;
+    height: 80px;
+    background: #333;
+    border-radius: 5px;
+}
+
+.textContainer{
+    font-size: 20px;
+    text-align: center;
+}
+
+/*Animations*/
+.slideBar label, .sliderTab {
+    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+}
+
+/*Toggle*/
+.slideBar input:checked + label{
+    opacity: 1;
+    color: #fff;
+}
+
+.slideBar #item1:checked ~ .sliderTab{ margin-left: 0; }
+.slideBar #item2:checked ~ .sliderTab{ margin-left: 20%; }
+.slideBar #item3:checked ~ .sliderTab{ margin-left: 40%; }
+.slideBar #item4:checked ~ .sliderTab{ margin-left: 60%; }
+.slideBar #item5:checked ~ .sliderTab{ margin-left: 80%; }
+
